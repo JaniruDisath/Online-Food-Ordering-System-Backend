@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("customer")
 public class CustomerController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class CustomerController {
 
     @GetMapping("/get")
     public Customer getCustomer(@PathVariable String customerID){
-        return new Customer(10);
+        return new Customer();
     }
 
     @PutMapping("/update")

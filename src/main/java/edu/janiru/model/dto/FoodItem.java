@@ -12,5 +12,7 @@ public class FoodItem {
     private String name;
     private Double price;
     private String description;
+    private int stock;
     private int portion;
+
 }

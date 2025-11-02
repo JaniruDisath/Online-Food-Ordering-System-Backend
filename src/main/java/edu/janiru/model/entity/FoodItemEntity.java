@@ -11,12 +11,13 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 @Entity
-@Table(name = "foodItem")
+@Table(name ="food_item")
 public class FoodItemEntity {
     @Id
     private String id;
     private String name;
     private Double price;
     private String description;
+    private int stock;
     private int portion;
 }

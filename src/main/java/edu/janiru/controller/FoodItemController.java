@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/food-item")
+@RequestMapping("food-item")
 public class FoodItemController {
 
     @Autowired
@@ -18,32 +18,34 @@ public class FoodItemController {
     //Basic CRUD
     @PostMapping("/add")
     public String addNewFoodItem(@RequestBody FoodItem foodItem){
+        service.addFoodItem(foodItem);
         return "Food Item";
     }
 
-    @GetMapping("/get")
+    @GetMapping("/get/{itemID}")
     public FoodItem getFoodItem(@PathVariable String itemID){
-        return new FoodItem();
+        System.out.println(service.getFoodItem(itemID));
+        return service.getFoodItem(itemID);
     }
 
     @PutMapping("/update")
     public String updateFoodItem(@RequestBody FoodItem foodItem){
-        return "Update";
+        return service.updateFoodItem(foodItem);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping("/delete/{itemID}")
     public String deleteFoodItem(@PathVariable String itemID){
-        return "Item "+itemID+"Deleted";
+        return service.deleteFoodItem(itemID);
     }
 
     //Get Lists Food Items
     @GetMapping("/get-all")
     public List<FoodItem> getAllFoodItem(){
-        return new ArrayList<>();
+        return service.getAllFoodItems();
     }
 
     @GetMapping("/get-all-available")
     public List<FoodItem> getAllAvailableFoodItem(){
-        return new ArrayList<>();
+        return service.getAllAvailableFoodItems();
     }
 }
