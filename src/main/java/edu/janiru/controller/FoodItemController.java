@@ -1,11 +1,19 @@
 package edu.janiru.controller;
 
 import edu.janiru.model.dto.FoodItem;
+import edu.janiru.service.FoodItemService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
-@RequestMapping("/food_item")
+@RequestMapping("/food-item")
 public class FoodItemController {
+
+    @Autowired
+    private FoodItemService service;
 
     //Basic CRUD
     @PostMapping("/add")
@@ -28,5 +36,14 @@ public class FoodItemController {
         return "Item "+itemID+"Deleted";
     }
 
-    //Get All Food Items
+    //Get Lists Food Items
+    @GetMapping("/get-all")
+    public List<FoodItem> getAllFoodItem(){
+        return new ArrayList<>();
+    }
+
+    @GetMapping("/get-all-available")
+    public List<FoodItem> getAllAvailableFoodItem(){
+        return new ArrayList<>();
+    }
 }

@@ -1,11 +1,16 @@
 package edu.janiru.controller;
 
 import edu.janiru.model.dto.Customer;
+import edu.janiru.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
+
+    @Autowired
+    private CustomerService customerService;
 
     //Basic CRUD
     @PostMapping("/add")

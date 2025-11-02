@@ -8,5 +8,9 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Customer {
-    private int test;
+    private String id;
+    private String title;
+    private String name;
+    private String mobileNumber;
+    private String email;
 }

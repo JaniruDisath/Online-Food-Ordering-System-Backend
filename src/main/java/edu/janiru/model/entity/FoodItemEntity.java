@@ -15,4 +15,8 @@ import lombok.*;
 public class FoodItemEntity {
     @Id
     private String id;
+    private String name;
+    private Double price;
+    private String description;
+    private int portion;
 }

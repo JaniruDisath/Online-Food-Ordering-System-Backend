@@ -15,4 +15,6 @@ import lombok.*;
 public class CustomerEntity {
     @Id
     private String id;
+    private String mobileNumber;
+    private String Email;
 }

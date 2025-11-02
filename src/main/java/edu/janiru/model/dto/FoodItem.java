@@ -8,5 +8,9 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class FoodItem {
-    private int test;
+    private String id;
+    private String name;
+    private Double price;
+    private String description;
+    private int portion;
 }
