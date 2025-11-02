@@ -15,7 +15,8 @@ public class CustomerController {
     //Basic CRUD
     @PostMapping("/add")
     public String addNewCustomer(@RequestBody Customer customer){
-        return "Customer"+customer;
+        customerService.addCustomer(customer);
+        return "Added";
     }
 
     @GetMapping("/get")
